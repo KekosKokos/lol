@@ -1,5 +1,5 @@
 #include "gdt.h"
-
+#include "port.h"
 void printf(char* str)
 {
     static unsigned short* VideoMemory = (unsigned short*)0xb8000;
@@ -26,8 +26,6 @@ extern "C" void kernelMain(const void* multiboot_structure, unsigned int /*multi
     printf("Hello World! --- http://www.AlgorithMan.de");
     
     GlobalDescriptorTable gdt;
-    
-    
-    
+
     while(1);
 }
